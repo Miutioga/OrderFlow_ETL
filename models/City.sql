@@ -9,10 +9,10 @@ SELECT
     -- Sales Territory
 	Countries.Region,
     Countries.Subregion,
-    -- Cities.Location,
+   -- GEOMETRY::STGeomFromWKB(CONVERT(VARBINARY(MAX), Countries.Location), 0) AS Location
 	StateProvinces.[LatestRecordedPopulation],
-    Cities.ValidFrom,
-    Cities.ValidTo
+    LEFT(Cities.ValidFrom, 10) AS [Valid From],
+    LEFT(Cities.ValidTo, 10) AS [Valid To]
     -- Lineage Key
 FROM
     [WideWorldImporters].[Application].[Cities] AS Cities
