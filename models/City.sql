@@ -6,11 +6,11 @@ SELECT
 	StateProvinces.StateProvinceName AS [State Province],
 	Countries.CountryName AS Country,
 	Countries.Continent,
-    -- Sales Territory
+    StateProvinces.SalesTerritory AS [Sales Territory],
 	Countries.Region,
     Countries.Subregion,
-   -- GEOMETRY::STGeomFromWKB(CONVERT(VARBINARY(MAX), Countries.Location), 0) AS Location
-	StateProvinces.[LatestRecordedPopulation],
+    --CAST(Cities.Location AS VARCHAR(20)) AS Location,
+	StateProvinces.LatestRecordedPopulation,
     LEFT(Cities.ValidFrom, 10) AS [Valid From],
     LEFT(Cities.ValidTo, 10) AS [Valid To]
     -- Lineage Key
