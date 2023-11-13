@@ -21,6 +21,7 @@ SELECT DISTINCT
 		LEFT(Warehouse_StockItems.ValidTo, 10) AS [Valid To]
 
   FROM [WideWorldImporters].[Purchasing].[PurchaseOrderLines] AS StockItems
+  
   LEFT JOIN [WideWorldImporters].[Warehouse].[StockItems] AS Warehouse_StockItems
   ON StockItems.StockItemID = Warehouse_StockItems.StockItemID
   LEFT JOIN [WideWorldImporters].[Warehouse].[Colors] AS Warehouse_Colors
