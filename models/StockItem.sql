@@ -35,5 +35,3 @@ SELECT DISTINCT
   ON StockItems.StockItemID = InvoiceLines.StockItemID
   LEFT JOIN [WideWorldImporters].[Warehouse].[PackageTypes] AS PackageTypes_2
   ON InvoiceLines.PackageTypeID = PackageTypes_2.PackageTypeID
-
-  ORDER BY [Stock Item ID];
